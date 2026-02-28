@@ -19,10 +19,21 @@ func ConsumidorCSV(resultChan <-chan *model.Chave, done chan<- struct{}) {
 
 	for info := range resultChan {
 		err := writer.Write([]string{
-			info.Chave, fmt.Sprintf("%d", info.TpChave), fmt.Sprintf("%d", info.Ispb), info.NrAgencia,
-			fmt.Sprintf("%d", info.TpConta), info.NrConta, info.DtHrAberturaConta,
-			fmt.Sprintf("%d", info.TpPessoa), fmt.Sprintf("%d", info.CpfCnpj), info.Nome, info.NomeFantasia,
-			info.DtHrCriacaoChave, info.DtHrIncioPosseChave, info.DtHrAberturaReivindicacao, info.EndToEndId,
+			info.Chave,
+			fmt.Sprintf("%d", info.TpChave),
+			info.Ispb,
+			info.NrAgencia,
+			fmt.Sprintf("%d", info.TpConta),
+			info.NrConta,
+			info.DtHrAberturaConta,
+			fmt.Sprintf("%d", info.TpPessoa),
+			info.CpfCnpj,
+			info.Nome,
+			info.NomeFantasia,
+			info.DtHrCriacaoChave,
+			info.DtHrIncioPosseChave,
+			info.DtHrAberturaReivindicacao,
+			info.EndToEndId,
 		})
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Erro escrevendo CSV: %v\n", err)
