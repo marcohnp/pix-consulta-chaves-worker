@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"pix-consulta-chaves-worker/client"
+	"pix-consulta-chaves-worker/config"
 	"pix-consulta-chaves-worker/model"
 	"pix-consulta-chaves-worker/util"
 	"sync"
@@ -18,7 +19,7 @@ func ProcessChaves(scanner *bufio.Scanner) {
 	go util.ConsumidorCSV(resultChan, done)
 
 	var wg sync.WaitGroup
-	numWorkers := 5
+	numWorkers := config.NumWorkers
 	for i := 0; i < numWorkers; i++ {
 		wg.Add(1)
 		go func() {
