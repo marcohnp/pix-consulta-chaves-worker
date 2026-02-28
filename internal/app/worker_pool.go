@@ -1,13 +1,13 @@
-package service
+package app
 
 import (
 	"bufio"
 	"fmt"
 	"os"
-	"pix-consulta-chaves-worker/client"
-	"pix-consulta-chaves-worker/config"
-	"pix-consulta-chaves-worker/model"
-	"pix-consulta-chaves-worker/util"
+	"pix-consulta-chaves-worker/internal/client"
+	"pix-consulta-chaves-worker/internal/config"
+	"pix-consulta-chaves-worker/internal/domain"
+	"pix-consulta-chaves-worker/internal/output"
 	"sync"
 )
 

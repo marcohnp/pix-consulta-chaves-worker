@@ -4,7 +4,7 @@ import (
 	"encoding/csv"
 	"fmt"
 	"os"
-	"pix-consulta-chaves-worker/model"
+	"pix-consulta-chaves-worker/internal/domain"
 )
 
 func ConsumidorCSV(resultChan <-chan *model.Chave, done chan<- struct{}) {

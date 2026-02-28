@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"pix-consulta-chaves-worker/model"
+	"pix-consulta-chaves-worker/internal/domain"
 )
 
 func ConsultarChavePix(chave string) (*model.Chave, error) {
